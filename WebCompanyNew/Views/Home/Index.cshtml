@@ -1,8 +1,59 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<WebCompanyNew.Models.Personal>
+
+@{
+    ViewData["Title"] = "WebCompany";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="container">
+    <h3>Сотрудники</h3>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-2 d-flex align-items-md-stretch">
+                <div class="card">
+                    @Html.DisplayFor(modelItem => item.person) <br />
+                    @Html.DisplayFor(modelItem => item.namePos)<br />
+                    @Html.DisplayFor(modelItem => item.workEmail) <br />
+                    @Html.DisplayFor(modelItem => item.workPhone)  <br />
+                    @Html.DisplayFor(modelItem => item.dateB)
+                </div>
+            </div>
+        }
+
+    </div>
 </div>
+
+<aside>
+    <h3>События</h3>
+
+    @foreach(var item in ViewBag.Events)
+    {
+        <div class="col-lg-9 d-flex align-items-md-stretch" style="padding:5px">
+            <div class="card">
+                @item.nameEvent <br />
+                @item.textEvent <br />
+                @item.dateEvent @item.author
+            </div>
+        </div>
+    }
+</aside>
+
+<div class="container">
+    <h3>Новости</h3>
+    <div class="row">
+    @foreach(var item in ViewBag.News)
+    {
+        <div class="col-lg-6 d-flex align-items-md-stretch">
+            <div class="card">
+				<img src="~/newscard.png" class="card-img-top"/>
+                @item.titleNews <br />
+                @item.textNews <br />
+                @item.dateNews
+            </div>
+        </div>
+    }
+    </div>
+</div>
+

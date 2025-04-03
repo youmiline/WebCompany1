@@ -13,9 +13,16 @@ namespace WebCompanyNew.Controllers
 			_logger = logger;
 		}
 
+		DBMethods methods = new DBMethods();
+
 		public IActionResult Index()
 		{
-			return View();
+			List<Personal> personal = methods.GetPersonals();
+			List<Event> events = methods.GetEvents();
+			List<News> news = methods.GetNews();
+			ViewBag.Events = events;
+			ViewBag.News = news;
+			return View(personal);
 		}
 
 		public IActionResult Privacy()

@@ -21,12 +21,17 @@ body {
   margin-bottom: 60px;
 }
 
-.card{
-    background-color:palegreen;
+.card {
+    background-color: palegreen;
     padding-top: 5px;
-    padding-left:5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 aside{
     float:left;
+}
+
+nav{
+    background-color:palegreen;
 }

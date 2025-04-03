@@ -25,12 +25,14 @@
     </div>
 </div>
 
-<aside>
+
+<aside style="padding-left:10px">
+
     <h3>События</h3>
 
     @foreach(var item in ViewBag.Events)
     {
-        <div class="col-lg-9 d-flex align-items-md-stretch" style="padding:5px">
+        <div class="col-lg-9 d-flex align-items-md-stretch" style="padding-top:5px">
             <div class="card">
                 @item.nameEvent <br />
                 @item.textEvent <br />
@@ -46,7 +48,7 @@
     @foreach(var item in ViewBag.News)
     {
         <div class="col-lg-6 d-flex align-items-md-stretch">
-            <div class="card">
+            <div class="card" style="margin-top:15px">
 				<img src="~/newscard.png" class="card-img-top"/>
                 @item.titleNews <br />
                 @item.textNews <br />
